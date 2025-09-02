@@ -1,39 +1,3 @@
-from telethon import TelegramClient, events
-import asyncio
-import logging
-from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes, MessageHandler, filters
-import sqlite3
-import re
-
-api_id = 25630682        # Your API ID here
-api_hash = "2430bd58c780ce13be62e7924bd29328"  # Your API Hash here
-
-client = TelegramClient("user_session", api_id, api_hash)
-
-# Bot token
-TOKEN = "8103884844:AAF37R5NyXmqKwRR898_TRO2SwOfDBb98Ew"
-
-# Your Telegram User ID (replace with your actual ID)
-ADMIN_USER_ID = 6651946441  # Change this to your Telegram user ID
-
-# Logging setup
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
-logger = logging.getLogger(__name__)
-
-# DB setup
-def init_db():
-    conn = sqlite3.connect('auto_forward.db')
-    c = conn.cursor()
-    
-    # Drop old tables if they exist
-    c.execute("DROP TABLE IF EXISTS edits")
-    c.execute("DROP TABLE IF EXISTS links")
-    c.execute("DROP TABLE IF EXISTS channel_pairs")
-    c.execute("DROP TABLE IF EXISTS settings")
-    c.execute("DROP TABLE IF EXISTS admins")
-    
-    # Create new tables
     c.execute('''CREATE TABLE IF NOT EXISTS channel_pairs
                  (id INTEGER PRIMARY KEY AUTOINCREMENT,
                   source_id INTEGER,

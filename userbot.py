@@ -26,18 +26,18 @@ import sqlite3
 import re
 from collections import defaultdict
 
-api_id = int
-api_hash = "d15c8c4c88a5b82aab6a673eff8ca244"
+api_id = int(os.getenv("API_ID")) 
+api_hash = os.getenv("API_HASH")
 
 # Session string from environment variable
-session_str = "1BVtsOMMBuzphEKhTDmOcTTJBLrl7FFi37rXneJX_abg-lLowkeBrbgkacqwVa4ouO-4YqSP9zjVBvGbJbUH_JNleRl50FDuW4ijSs87geQSfbVyJxRghIP99-ig2PVrhxpdWawPyhTRGOsVJegu8oXTRVqtw5XLddJld3xAY78Chu6XBiNZqo_tbvhOHqU2yM7tNws62fEhdihdYNJAK1DiDybKK_irBpe0DOjZ_OWe-Jsg0O8Mq7d_76J-8jneKhHSAEokblPuO_rSc5CftO-uy59MJ5hANPadV950F0WXyH6RHYbTctZC_3zd03WDpQmxIglBCLwPiBTLFevlxJHkEONfuXrk="
+session_str = os.getenv("SESSION_STRING") 
 client = TelegramClient(StringSession(session_str), api_id, api_hash)
 
 # Bot token
-TOKEN = "7931829452:AAFeDXaKxxdbqOpggZCWrau3pgN11ijogiM"
+TOKEN = os.getenv("BOT_TOKEN")
 
 # Your Telegram User ID (replace with your actual ID)
-OWNER_USER_ID = 6651946441
+OWNER_USER_ID = int(os.getenv("ADMIN_USER_ID"))
 
 # Logging setup
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)

@@ -1,3 +1,20 @@
+from flask import Flask
+import threading
+import os
+
+# ===== Dummy Flask Server =====
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "✅ Bot is running on Render!"
+
+def run_flask():
+    port = int(os.environ.get("PORT", 5000))  # Render ka port
+    app.run(host="0.0.0.0", port=port)
+
+# Flask ko alag thread me start karo
+threading.Thread(target=run_flask).start()
 import os
 from telethon.sessions import StringSession
 from telethon import TelegramClient, events

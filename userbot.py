@@ -745,7 +745,7 @@ async def list_admins(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.effective_user.id
     if not bot.is_admin(user_id):
-        await update.message.reply_text("➢𝑊𝑎𝑛𝑡 𝑇𝑜 𝐴𝑐𝑐𝑒𝑠𝑠 𝑇ℎ𝑖𝑠 𝐵𝑜𝑡 𝐶𝑜𝑛𝑡𝑎𝑐𝑡 𝐵𝑜𝑡 𝑂𝑤𝑛𝑒𝑟 @𝑀𝑟𝐽𝑎𝑔𝑔𝑖𝑏𝑜𝑡")
+        await update.message.reply_text("➢𝑊𝑎𝑛𝑡 𝑇𝑜 𝐴𝑐𝑐𝑒𝑠𝑠 𝑇ℎ𝑖𝑠 𝐵𝑜𝑡 𝐶𝑜𝑛𝑡𝑎𝑐𝑡 𝐵𝑜𝑡 𝑂𝑤𝑛𝑒𝑟 @TG_Jaggi")
         return
         
     status = "ON ✅" if bot.forwarding_enabled else "OFF ❌"

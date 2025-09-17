@@ -842,7 +842,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(
         "🤖 Auto Forward Bot Help\n\n"
         "📚 Setup Instructions:\n"
-        "1. Add the bot as admin in both source and target channels with necessary permissions\n"
+        "1. Add user account as admin in target channels with necessary permissions\n"
         "2. Use /addpair source_channel_id target_channel_id to create a forwarding pair\n"
         "3. Use /setfilter to add keyword filtering (optional)\n"
         "4. Use /addword and /addlink to set up text/link replacements (optional)\n\n"

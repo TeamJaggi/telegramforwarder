@@ -1,6 +1,5 @@
 flask
 telethon
 python-telegram-bot==20.3
-aiosqlite
 motor
 pymongo

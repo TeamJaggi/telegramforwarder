@@ -491,7 +491,7 @@ async def add_link(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"❌ Error: {str(e)}")
 
 @admin_required
-async def remove_edit(update: Update, ContextTypes.DEFAULT_TYPE):
+async def remove_edit(update: Update,context: ContextTypes.DEFAULT_TYPE):
     try:
         if not context.args:
             await update.message.reply_text("➢ Format: /removeword old_text")

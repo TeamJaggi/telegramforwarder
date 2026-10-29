@@ -76,7 +76,7 @@ async def init_db():
         await db.channel_pairs.create_index([("source_id", ASCENDING), ("target_id", ASCENDING)], unique=True)
         await db.message_mapping.create_index([("source_channel_id", ASCENDING), ("source_message_id", ASCENDING)])
         await db.settings.create_index("name", unique=True)
-        await.db.admins.create_index("user_id", unique=True)
+        await db.admins.create_index("user_id", unique=True)
         
         # Default settings
         default_settings = [
